@@ -16,8 +16,9 @@ def caesarCipherEncryptor(string, key):
     for charr in range(len(string)):
         char_val = ord(string[charr])
         new_val = char_val + key
-        if new_val > ord('z'):
+        while new_val > ord('z'):
             new_val -= 26
+
         new_char = chr(new_val)
         new_string += new_char
     return new_string
@@ -25,10 +26,9 @@ def caesarCipherEncryptor(string, key):
 pass
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print(caesarCipherEncryptor('abc',3))
     print(caesarCipherEncryptor('def',3))
-    print(caesarCipherEncryptor('xyz',3))
+    print(caesarCipherEncryptor('xyz',2))
+    print(caesarCipherEncryptor('xyz',505))
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
